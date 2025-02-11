@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtPlay</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to ArtPlay</h1>
+        <nav>
+            <ul>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#virtual-store">Virtual Store</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <p>Explore the world of my art.</p>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="artwork">
+            <img src="assets/images/art1.jpg" alt="Artwork 1" class="art-image">
+            <div class="art-details">
+                <h3>Artwork 1</h3>
+                <p>$50.00</p>
+                <button onclick="addToCart('Artwork 1', 50)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="artwork">
+            <img src="assets/images/art2.jpg" alt="Artwork 2" class="art-image">
+            <div class="art-details">
+                <h3>Artwork 2</h3>
+                <p>$75.00</p>
+                <button onclick="addToCart('Artwork 2', 75)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Store -->
+    <section id="virtual-store">
+        <h2>Virtual Store</h2>
+        <div id="360-view">
+            <!-- 360° View Container -->
+            <div id="threejs-container"></div>
+            <!-- Drag and Drop Zone -->
+            <div id="drag-drop-zone">
+                <p>Drag and drop images here to add them to the virtual store!</p>
+            </div>
+            <!-- Art Details Popup -->
+            <div id="art-details-popup" class="popup">
+                <h3 id="art-title"></h3>
+                <p id="art-description"></p>
+                <p id="art-price"></p>
+                <button onclick="addToCart(popupArtName, popupArtPrice)">Add to Cart</button>
+                <button onclick="closePopup()">Close</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop -->
+    <section id="shop">
+        <h2>Shop</h2>
+        <div id="cart">
+            <h3>Your Cart</h3>
+            <ul id="cart-items"></ul>
+            <p>Total: $<span id="cart-total">0</span></p>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm [Your Name], a passionate artist creating unique digital and traditional art. Welcome to my world of creativity!</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Designed by <strong>Kofi Fosu</strong></p>
+        <p>Contact me at <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>&copy; 2025 ArtPlay. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
